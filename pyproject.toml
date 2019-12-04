@@ -7,7 +7,6 @@ license = "GPL-3.0-only"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.6"
 sagemaker = "^1.44"
 
 [tool.poetry.dev-dependencies]

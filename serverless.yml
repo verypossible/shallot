@@ -1,9 +1,20 @@
-service: sls-layers
+service: shallot
 
 provider:
   name: aws
   runtime: python3.7
 
-functions:
-  hello:
-    handler: handler.hello
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+    layer:
+      name: sagemaker
+      description: Sagemaker layer
+      compatibleRuntimes:
+        - python3.7
+      licenseInfo: GPLv3
+      allowedAccounts:
+        - "*"
