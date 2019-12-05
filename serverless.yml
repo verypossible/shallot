@@ -6,13 +6,13 @@ provider:
 
 plugins:
   - serverless-python-requirements
-
 custom:
   pythonRequirements:
+    slim: true
     dockerizePip: non-linux
     layer:
-      name: sagemaker
-      description: Sagemaker layer
+      name: sagemaker-pandas
+      description: +sagemaker +pandas -numpy -scipy
       compatibleRuntimes:
         - python3.7
       licenseInfo: GPLv3
